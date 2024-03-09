@@ -436,17 +436,10 @@ svg {
   border-bottom: 2px solid #307042;
   pointer-events: none;
 }
+
 .jss303 {
   cursor: pointer;
   display: inline-flex;
-  align-items: center;
-  margin-left: -14px;
-  margin-right: 16px;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  margin-left: -2px;
-  margin-top: 10px;
-  display: flex;
   align-items: center;
 }
 
@@ -608,30 +601,39 @@ button {
   text-transform: uppercase;
 }
 
+button > span {
+  color: rgb(42, 217, 54);
+  font-weight: 500;
+}
+
 .jss339 {
   padding: 5px 16px;
+  border: 1px solid #43a445;
+  border-radius: 5px;
 }
 
 .form-control {
   position: relative;
   margin: 20px 0 40px;
-  width: 300px;
+  width: 320px;
 }
 
 .form-control input {
   background-color: transparent;
   border: 0;
-  border-bottom: 2px #fff solid;
+  border-bottom: 2px #000 solid;
   display: block;
   width: 100%;
   padding: 15px 0;
-  font-size: 18px;
-  color: #fff;
+  font-size: 16px;
+  color: #000;
+  transition: border-bottom-color 0.4s ease-in-out;
 }
 
-.form-control input:focus {
+.form-control input:focus,
+.form-control input:valid {
   outline: 0;
-  border-bottom-color: rgb(43, 153, 83);
+  border-bottom-color: rgb(19, 168, 14);
 }
 
 .form-control label {
@@ -643,15 +645,34 @@ button {
 
 .form-control label span {
   display: inline-block;
-  font-size: 18px;
+  font-size: 16px;
   min-width: 5px;
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.form-control input:focus + label span {
-  color: rgb(43, 153, 83);
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: rgb(41, 196, 24);
   transform: translateY(-20px);
   font-size: 10px;
+  transition: color 0.5s ease-in;
+}
+
+.form-control input:not(:focus):valid + label span {
+  color: rgb(198, 198, 198);
+  transform: translateY(0px);
+  font-size: 10px;
+  transition: color 0.5s ease-in;
+}
+
+.form-control input:not(:focus):valid,
+.form-control input:not(:focus):not(:placeholder-shown) {
+  border-bottom-color: #dfdfdf;
+}
+
+.form-control input:focus + label,
+.form-control input:valid + label {
+  color: rgb(19, 168, 14);
 }
 
 .jss23 {
@@ -663,4 +684,77 @@ button {
   color: red;
   font-size: 12px;
   margin-top: 15px;
+}
+
+.checkbox-wrapper-21 .control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  top: -15px;
+}
+.checkbox-wrapper-21 .control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.checkbox-wrapper-21 .control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #ffffff;
+}
+.checkbox-wrapper-21 .control__indicator {
+  outline: 2px solid #9c9696;
+  border-radius: 2px;
+  position: absolute;
+  top: -1px;
+}
+
+.checkbox-wrapper-21 .control input:checked ~ .control__indicator {
+  background: #ea0808;
+}
+
+.checkbox-wrapper-21 .control__indicator:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkbox-wrapper-21 .control input:checked ~ .control__indicator:after {
+  display: block;
+}
+.checkbox-wrapper-21 .control--checkbox .control__indicator:after {
+  left: 8px;
+  top: 4px;
+  width: 3px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.checkbox-wrapper-21
+  .control--checkbox
+  input:disabled
+  ~ .control__indicator:after {
+  border-color: #ffffff;
+}
+
+.control,
+.control--checkbox {
+  display: block;
+  position: relative;
+  /* top: -15px; */
+}
+.checkbox-wrapper-21 .control input:checked ~ .control__indicator {
+  background: #ea0808;
+  outline: none;
+}
+
+.checkbox-wrapper-21 .control input:disabled:checked ~ .control__indicator {
+  background: #ffffff;
+  outline: none;
 }
