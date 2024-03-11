@@ -4,6 +4,7 @@ const passInput = document.querySelector('input[type="password"]');
 const labels = document.querySelectorAll(".form-control label");
 const errorSpan1 = document.querySelector(".error-message1");
 const errorSpan2 = document.querySelector(".error-message2");
+const generalErrorMessage = document.getElementById("error-message");
 
 labels.forEach((label) => {
   label.innerHTML = label.innerText
@@ -27,6 +28,7 @@ usernameInput.addEventListener("input", () => {
     errorSpan1.textContent = "Vui lòng nhập tên đăng nhập!";
   } else {
     errorSpan1.textContent = "";
+    generalErrorMessage.textContent = ""; // Clear general error message
   }
 });
 
@@ -35,6 +37,7 @@ passInput.addEventListener("input", () => {
     errorSpan2.textContent = "Vui lòng nhập mật khẩu!";
   } else {
     errorSpan2.textContent = "";
+    generalErrorMessage.textContent = ""; // Clear general error message
   }
 });
 
@@ -58,12 +61,12 @@ form.addEventListener("submit", (e) => {
   }
 
   if (!hasError) {
-    document.getElementById("error-message").textContent =
-      "Tên đăng nhập hoặc mật khẩu không đúng!";
-    document.getElementById("error-message").style.display = "block";
+    generalErrorMessage.textContent = "Tên đăng nhập hoặc mật khẩu sai!";
+    generalErrorMessage.style.display = "block";
   } else {
-    document.getElementById("error-message").textContent = "";
-    document.getElementById("error-message").style.display = "none";
+    generalErrorMessage.textContent = "";
+    generalErrorMessage.style.display = "none";
+
     console.log("Form submitted successfully!");
   }
 });
