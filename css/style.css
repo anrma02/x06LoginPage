@@ -346,9 +346,6 @@ label + .jss260 {
   background: none;
   -webkit-tap-highlight-color: transparent;
 }
-.jss292 {
-  margin-left: 8px;
-}
 
 .jss289 {
   height: 0.01em;
@@ -390,7 +387,8 @@ label + .jss260 {
 }
 .jss292 {
   position: absolute;
-  top: 50px;
+  margin-left: 8px;
+  top: 40px;
   right: 0;
 }
 .jss289 {
@@ -650,7 +648,7 @@ input {
 
 input {
   font-size: 18px;
-  height: 50px;
+  height: 44px;
   border: 0;
   color: #555555be;
   outline: none;
@@ -671,7 +669,7 @@ input {
     overflow: hidden;
     text-overflow: ellipsis;
     transform-origin: left bottom;
-    transform: translateY(40px);
+    transform: translateY(35px);
   }
   &:not(:placeholder-shown) + label,
   &:focus + label {
@@ -695,7 +693,7 @@ label {
 }
 .field input:focus + label,
 .field input:not(:placeholder-shown) + label {
-  /* transform: translate(0, 0.9em); */
+  transform: translate(0, 1em);
   cursor: default;
   font-size: 10px;
   transition: transform 0.3s ease-in-out;
@@ -729,8 +727,6 @@ label {
   font-size: 12px;
   /* margin-top: 15px; */
 }
-
- 
 
 .checkbox-wrapper-21 .control {
   display: block;
