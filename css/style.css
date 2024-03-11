@@ -390,7 +390,7 @@ label + .jss260 {
 }
 .jss292 {
   position: absolute;
-  top: 30px;
+  top: 50px;
   right: 0;
 }
 .jss289 {
@@ -611,70 +611,85 @@ button > span {
   border: 1px solid #43a445;
   border-radius: 5px;
 }
-
-.form-control {
-  position: relative;
-  margin: 20px 0 40px;
-  width: 320px;
+.jss3000 {
+  margin-bottom: 35px;
 }
 
-.form-control input {
+.field {
+  display: flex;
+  flex-flow: column-reverse;
+}
+
+.field input {
   background-color: transparent;
   border: 0;
-  border-bottom: 2px #000 solid;
+  border-bottom: 2px #625f5f solid;
   display: block;
   width: 100%;
   padding: 15px 0;
   font-size: 16px;
-  color: #000;
+  /* color: #000; */
   transition: border-bottom-color 0.4s ease-in-out;
 }
 
-.form-control input:focus,
-.form-control input:valid {
-  outline: 0;
-  border-bottom-color: rgb(19, 168, 14);
+label,
+input {
+  transition: all 200ms ease;
 }
 
-.form-control label {
-  position: absolute;
-  top: 15px;
-  left: 0;
-  pointer-events: none;
+input {
+  font-size: 24px;
+  border: 0;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 5px 0;
+  &:focus {
+    outline: 0;
+    border-bottom-color: #28a745;
+  }
+  &:placeholder-shown + label {
+    cursor: text;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left bottom;
+    transform: translate(0, 2.125em);
+  }
+  &:not(:placeholder-shown) + label,
+  &:focus + label {
+    transform: translate(0, 0);
+    cursor: default;
+    color: #28a745;
+  }
 }
 
-.form-control label span {
-  display: inline-block;
-  font-size: 16px;
-  min-width: 5px;
-  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+label {
+  max-width: 66.666%;
+  color: #ccc;
 }
 
-.form-control input:focus + label span,
-.form-control input:valid + label span {
-  color: rgb(41, 196, 24);
-  transform: translateY(-20px);
-  font-size: 10px;
-  transition: color 0.5s ease-in;
+::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+  transform: translate(0, 0);
+  cursor: default;
+  color: #ccc;
+}
+.field input:focus + label {
+  color: #28a745;
+}
+.field input {
+  border-bottom-color: #ccc;
 }
 
-.form-control input:not(:focus):valid + label span {
-  color: rgb(198, 198, 198);
-  transform: translateY(0px);
-  font-size: 10px;
-  transition: color 0.5s ease-in;
+.field input:focus {
+  border-bottom-color: #28a745;
 }
-
-.form-control input:not(:focus):valid,
-.form-control input:not(:focus):not(:placeholder-shown) {
-  border-bottom-color: #dfdfdf;
-}
-
-.form-control input:focus + label,
-.form-control input:valid + label {
-  color: rgb(19, 168, 14);
-}
-
 .jss23 {
   position: relative;
 }
@@ -683,7 +698,7 @@ button > span {
 .error-message2 {
   color: red;
   font-size: 12px;
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
 
 .checkbox-wrapper-21 .control {
