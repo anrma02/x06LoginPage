@@ -12,6 +12,16 @@ labels.forEach((label) => {
     .join("");
 });
 
+const button = document.getElementById("myButton");
+
+button.addEventListener("mousedown", function () {
+  button.classList.add("active");
+});
+
+button.addEventListener("mouseup", function () {
+  button.classList.remove("active");
+});
+
 usernameInput.addEventListener("input", () => {
   if (usernameInput.value === "") {
     errorSpan1.textContent = "Vui lòng nhập tên đăng nhập!";
@@ -36,14 +46,24 @@ form.addEventListener("submit", (e) => {
   if (usernameInput.value === "") {
     errorSpan1.textContent = "Vui lòng nhập tên đăng nhập!";
     hasError = true;
+  } else {
+    errorSpan1.textContent = "";
   }
 
   if (passInput.value === "") {
     errorSpan2.textContent = "Vui lòng nhập mật khẩu!";
     hasError = true;
+  } else {
+    errorSpan2.textContent = "";
   }
 
   if (!hasError) {
+    document.getElementById("error-message").textContent =
+      "Tên đăng nhập hoặc mật khẩu không đúng!";
+    document.getElementById("error-message").style.display = "block";
+  } else {
+    document.getElementById("error-message").textContent = "";
+    document.getElementById("error-message").style.display = "none";
     console.log("Form submitted successfully!");
   }
 });

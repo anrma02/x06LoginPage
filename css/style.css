@@ -48,7 +48,7 @@ html* {
 body {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 300;
-  line-height: 1.5em;
+  /* line-height: 1.5em; */
   color: #3c4858;
   font-size: 14px;
 }
@@ -58,7 +58,7 @@ body {
   height: auto;
   /* position: relative; */
   overflow: hidden;
-  height: 95vh;
+  height: 90vh;
 }
 .jss2 {
   -webkit-font-smoothing: antialiased;
@@ -470,7 +470,7 @@ label {
 }
 
 .jss324 {
-  margin-top: 5px;
+  /* margin-top: 5px; */
 }
 
 .jss325 {
@@ -576,6 +576,7 @@ html [type="button"],
 
 button {
   height: 22px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .jss311 {
@@ -603,6 +604,22 @@ button > span {
   border: 1px solid rgba(9, 153, 48, 0.5);
   /* border-color: ; */
   border-radius: 5px;
+  transition: border-color 0.3s ease-in-out;
+}
+button:active {
+  background-color: #c00505;
+}
+
+button.active > span {
+  color: rgb(15, 209, 67);
+}
+
+button.active {
+  background-color: #c00505;
+}
+
+.transition-button:hover {
+  background: #58fb7621;
 }
 
 .jss3000 {
@@ -621,10 +638,9 @@ button > span {
   display: block;
   width: 100%;
 
-  padding: 5px 0;
   font-size: 16px;
   color: #000000;
-  transition: border-bottom-color 0.4s ease-in-out;
+  transition: border-bottom-color 0.5s ease-in-out;
 }
 
 label,
@@ -660,6 +676,7 @@ input {
   &:not(:placeholder-shown) + label,
   &:focus + label {
     transform: translate(0, 0);
+
     cursor: default;
     color: #04e639;
   }
@@ -678,14 +695,17 @@ label {
 }
 .field input:focus + label,
 .field input:not(:placeholder-shown) + label {
-  transform: translate(0, 0.9em);
+  /* transform: translate(0, 0.9em); */
   cursor: default;
   font-size: 10px;
+  transition: transform 0.3s ease-in-out;
   color: #000000;
 }
 .field input:focus + label {
   font-size: 10px;
   font-weight: 500;
+  transform: translateY(10px);
+  transition: transform 0.3s;
   color: #026b1a;
 }
 .field input {
@@ -694,18 +714,23 @@ label {
 }
 
 .field input:focus {
-  border-bottom-color: #026b1a;
+  border-bottom-color: 2px linear-gradient(to right, #04e639, #04e639) solid;
+  /* transition: none; */
 }
 .jss23 {
   position: relative;
 }
 
 .error-message1,
-.error-message2 {
+.error-message2,
+.err {
+  margin-top: 5px;
   color: red;
   font-size: 12px;
   /* margin-top: 15px; */
 }
+
+ 
 
 .checkbox-wrapper-21 .control {
   display: block;
