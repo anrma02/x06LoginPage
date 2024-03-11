@@ -222,7 +222,7 @@ p {
   flex: 1 1 auto;
 }
 .jss199 {
-  color: rgba(0, 0, 0, 0.87);
+  color: rgb(255, 255, 255);
   font-size: 1.2rem;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 700;
@@ -537,7 +537,7 @@ label {
   pointer-events: none;
 }
 .jss191 {
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.622);
   font-size: 0.875rem;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
@@ -561,17 +561,9 @@ label {
 
 .jss328 {
   /* display: flex; */
-  padding: 8px 4px;
+  /* padding: 8px 4px; */
   box-sizing: border-box;
   align-items: center;
-}
-.jss10 {
-  position: relative;
-  margin-top: 10px;
-}
-
-.jss330 {
-  margin: 0 4px;
 }
 
 button,
@@ -602,13 +594,14 @@ button {
 }
 
 button > span {
-  color: rgb(42, 217, 54);
+  color: rgb(15, 209, 67);
   font-weight: 500;
 }
 
 .jss339 {
   padding: 5px 16px;
-  border: 1px solid #43a445;
+  border: 1px solid rgba(9, 153, 48, 0.5);
+  /* border-color: ; */
   border-radius: 5px;
 }
 .jss3000 {
@@ -626,9 +619,10 @@ button > span {
   border-bottom: 2px #625f5f solid;
   display: block;
   width: 100%;
-  padding: 15px 0;
+
+  padding: 5px 0;
   font-size: 16px;
-  /* color: #000; */
+  color: #000000;
   transition: border-bottom-color 0.4s ease-in-out;
 }
 
@@ -638,16 +632,21 @@ input {
 }
 
 input {
-  font-size: 24px;
+  font-size: 18px;
+  height: 50px;
   border: 0;
+  color: #555555be;
   outline: none;
+  font-size: 14px;
+  font-weight: 400;
+
   border-bottom: 1px solid #ccc;
   -webkit-appearance: none;
   border-radius: 0;
-  padding: 5px 0;
+  padding: 2px 0;
   &:focus {
     outline: 0;
-    border-bottom-color: #28a745;
+    border-bottom-color: #04e639;
   }
   &:placeholder-shown + label {
     cursor: text;
@@ -655,19 +654,21 @@ input {
     overflow: hidden;
     text-overflow: ellipsis;
     transform-origin: left bottom;
-    transform: translate(0, 2.125em);
+    transform: translateY(40px);
   }
   &:not(:placeholder-shown) + label,
   &:focus + label {
     transform: translate(0, 0);
     cursor: default;
-    color: #28a745;
+    color: #04e639;
   }
 }
 
 label {
   max-width: 66.666%;
-  color: #ccc;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 ::-webkit-input-placeholder {
@@ -676,19 +677,23 @@ label {
 }
 .field input:focus + label,
 .field input:not(:placeholder-shown) + label {
-  transform: translate(0, 0);
+  transform: translate(0, 0.9em);
   cursor: default;
-  color: #ccc;
+  font-size: 10px;
+  color: #000000;
 }
 .field input:focus + label {
-  color: #28a745;
+  font-size: 10px;
+  font-weight: 500;
+  color: #026b1a;
 }
 .field input {
-  border-bottom-color: #ccc;
+  border-bottom: 1px solid #ccc;
+  /* border-bottom-color: #797979; */
 }
 
 .field input:focus {
-  border-bottom-color: #28a745;
+  border-bottom-color: #026b1a;
 }
 .jss23 {
   position: relative;
@@ -772,4 +777,8 @@ label {
 .checkbox-wrapper-21 .control input:disabled:checked ~ .control__indicator {
   background: #ffffff;
   outline: none;
+}
+.control > span {
+  color: rgba(46, 46, 46, 0.84);
+  font-weight: 500;
 }
